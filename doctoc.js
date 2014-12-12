@@ -19,7 +19,7 @@ function cleanPath(path) {
 
 function transformAndSave(files, mode) {
   console.log('\n==================\n');
-  
+
   var transformed = files
     .map(function (x) {
       var content = fs.readFileSync(x.path, 'utf8')
@@ -34,9 +34,9 @@ function transformAndSave(files, mode) {
     console.log('"%s" is up to date', x.path);
   });
 
-  changed.forEach(function (x) { 
+  changed.forEach(function (x) {
     console.log('"%s" will be updated', x.path);
-    fs.writeFileSync(x.path, x.data, 'utf8'); 
+    fs.writeFileSync(x.path, x.data, 'utf8');
   });
 }
 
@@ -73,4 +73,3 @@ if (stat.isDirectory()) {
 transformAndSave(files, mode);
 
 console.log('\nEverything is OK.');
-
